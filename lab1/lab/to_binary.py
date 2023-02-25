@@ -56,18 +56,18 @@ def reverse_code(x: int) -> str:
 def additional_code(x: int) -> str:
     result = conversion(x)
     if x == 0:
-        result = "0" * 16
+        result = "0" * BIT
     elif x >= 0:
         result = "0" + result
     if x < 0:
         result = reverse_code(x)
-        lst = list(result)
-        for i in range(len(lst) - 1, -1, -1):
-            if lst[i] == "0":
-                lst[i] = "1"
+        total = list(result)
+        for i in range(len(total) - 1, -1, -1):
+            if total[i] == "0":
+                total[i] = "1"
                 break
-            if lst[i] == "1":
-                lst[i] = "0"
-        result = "".join(lst)
+            if total[i] == "1":
+                total[i] = "0"
+        result = "".join(total)
 
     return result
