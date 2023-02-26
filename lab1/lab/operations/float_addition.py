@@ -20,23 +20,23 @@ def float_to_bi(num: str) -> tuple:
     return integer, result
 
 
-def float_addition(num1, num2) -> str:
-    a, b = num1, num2
-    num1_int, num1_fl = float_to_bi(num1)
-    num2_int, num2_fl = float_to_bi(num2)
+def float_addition(number1, number2) -> str:
+    number1_copy, number2_copy = number1, number2
+    num1_int, num1_fl = float_to_bi(number1)
+    num2_int, num2_fl = float_to_bi(number2)
     max_fl, max_int = max(len(num1_fl), len(num2_fl)), max(len(num1_int), len(num2_int))
     num1_fl, num2_fl = num1_fl + (max_fl - len(num1_fl)) * '0', num2_fl + (max_fl - len(num2_fl)) * '0'
     num1_int, num2_int = (max_int - len(num1_int)) * '0' + num1_int, (max_int - len(num2_int)) * '0' + num2_int
-    num1, num2 = num1_int + num1_fl, num2_int + num2_fl
-    result = addition_additional(additional_code(conversion_ten(num1)), additional_code(conversion_ten(num2)))
+    number1, number2 = num1_int + num1_fl, num2_int + num2_fl
+    result = addition_additional(additional_code(conversion_ten(number1)), additional_code(conversion_ten(number2)))
     answer = ''.join(result[:-max_fl]) + ',' + ''.join(result[-max_fl:])
     index = conversion(max_fl)
-    if float(num1) + float(num2) > 0:
+    if float(number1) + float(number2) > 0:
         print(f'{result[0]}.{result[result.find("1", 1):]}*2^1.{index[index.find("1"):]}')
-        return f'{a} + {b} = {bi_to_float(answer)} = {answer[0]}.{answer[answer.find("1", 1):]}'
+        return f'{number1_copy} + {number2_copy} = {bi_to_float(answer)} = {answer[0]}.{answer[answer.find("1", 1):]}'
     else:
         print(f'{result[0]}.{result[result.find("1", 1):]}*2^1.{index[index.find("1"):]}')
-        return f'{a} + {b} = {bi_to_float(answer)} = {answer[0]}.{answer[answer.find("1", 1):]}'
+        return f'{number1_copy} + {number2_copy} = {bi_to_float(answer)} = {answer[0]}.{answer[answer.find("1", 1):]}'
 
 
 def bi_to_float(num: str) -> float:
