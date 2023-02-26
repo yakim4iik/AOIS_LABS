@@ -57,7 +57,10 @@ def main():
     print("_" * 23 + "FLOAT_ADDITION" + "_" * 23)
     print("_" * 60)
 
-    print(float_addition())
+    a_float = input("Введите 1 число(формата *.*): ")
+    b_float = input("Введите 2 число(формата *.*): ")
+
+    print(float_addition(a_float, b_float))
 
 
 if __name__ == "__main__":

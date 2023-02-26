@@ -1,4 +1,4 @@
-
+from lab.constants import *
 
 def conversion(number: int) -> str:
     result = ""
@@ -8,7 +8,7 @@ def conversion(number: int) -> str:
         result = y + result
         number = int(number / 2)
 
-    add = 15 - len(result)
+    add = BIT - 1 - len(result)
     result = add * "0" + result
 
     return result
@@ -42,13 +42,13 @@ def reverse_code(x: int) -> str:
     if x > 0:
         result = "0" + result
     if x < 0:
-        lst = list(result)
-        for i in range(0, len(lst)):
-            if lst[i] == "0":
-                lst[i] = "1"
+        total = list(result)
+        for i in range(0, len(total)):
+            if total[i] == "0":
+                total[i] = "1"
             else:
-                lst[i] = "0"
-        result = "1" + "".join(lst)
+                total[i] = "0"
+        result = "1" + "".join(total)
 
     return result
 

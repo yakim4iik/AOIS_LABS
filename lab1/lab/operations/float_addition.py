@@ -20,8 +20,8 @@ def float_to_bi(num: str) -> tuple:
     return integer, result
 
 
-def float_addition() -> str:
-    num1, num2 = a, b = '3.5', '8.25'
+def float_addition(num1, num2) -> str:
+    a, b = num1, num2
     num1_int, num1_fl = float_to_bi(num1)
     num2_int, num2_fl = float_to_bi(num2)
     max_fl, max_int = max(len(num1_fl), len(num2_fl)), max(len(num1_int), len(num2_int))
