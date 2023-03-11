@@ -29,7 +29,7 @@ def addition_additional(a: str, b: str) -> str:
     addition_result = interval(term1, term2)
     if len(addition_result) > BIT:
         addition_result.pop(0)
-    if addition_result[0] == "1":
+    """  if addition_result[0] == "1":
         for i in range(1, len(addition_result)):
             if addition_result[i] == "0":
                 addition_result[i] = "1"
@@ -40,7 +40,7 @@ def addition_additional(a: str, b: str) -> str:
                 addition_result[i] = "1"
                 break
             if addition_result[i] == "1":
-                addition_result[i] = "0"
+                addition_result[i] = "0"""
     return "".join(addition_result)
 
 
